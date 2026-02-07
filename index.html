@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Scan the QR code to access all our links and social media profiles.">
+    <title>SellOn Kitchenware</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="/assets/profile.png">  
+</head>
+
+<body class="landing-page">
+    <main class="landing-container">
+        <h1 class="landing-heading">Scan the QR Code to Continue</h1>
+        <p class="landing-subtext">Connect with us on all platforms</p>
+
+        <div class="qr-code-wrapper">
+            <img src="assets/qrcode.png" alt="QR Code - Scan to visit our links page" class="qr-code" id="qr-code">
+        </div>
+
+        <p class="landing-footer">
+            Or visit directly: <a href="links.html" class="landing-link">Open Links Page</a>
+        </p>
+    </main>
+
+    <script>
+        // Generate QR code dynamically using QRCode.js library
+        // This script will create a QR code that points to the links.html page
+        (function () {
+            // For local testing: use your computer's local IP (phone must be on same WiFi)
+            // For production: replace with your actual hosted domain
+            const linksPageUrl = 'http://10.106.132.143:8080/links.html';
+
+            // Create QR code using QR Server API
+            const qrCodeImg = document.getElementById('qr-code');
+            const qrApiUrl = `https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(linksPageUrl)}&bgcolor=ffffff&color=1a1a2e&margin=10`;
+
+            qrCodeImg.src = qrApiUrl;
+            qrCodeImg.onerror = function () {
+                console.log('QR code could not be generated.');
+            };
+        })();
+    </script>
+</body>
+
+</html>
