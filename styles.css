@@ -62,8 +62,23 @@ body {
   line-height: 1.6;
   color: var(--text-primary);
   min-height: 100vh;
-  background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+  background-image: url('assets/background.png');
+  background-size: cover;
+  background-position: center;
   background-attachment: fixed;
+  position: relative;
+}
+
+/* Dark overlay for better text readability */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
 }
 
 /* ============================================
@@ -77,7 +92,9 @@ body {
   justify-content: center;
   min-height: 100vh;
   padding: var(--spacing-lg);
-  background: #ffffff;
+  background: transparent;
+  position: relative;
+  z-index: 1;
 }
 
 .landing-container {
@@ -150,6 +167,8 @@ body {
   min-height: 100vh;
   padding: var(--spacing-xl) var(--spacing-md);
   padding-bottom: var(--spacing-xxl);
+  position: relative;
+  z-index: 1;
 }
 
 .links-container {
