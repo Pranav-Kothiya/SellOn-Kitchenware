@@ -7,20 +7,21 @@
     <meta name="description" content="Scan the QR code to access all our links and social media profiles.">
     <title>SellOn Kitchenware</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/x-icon" href="/assets/profile.png">  
+    <link rel="icon" type="image/x-icon" href="/assets/profile.png">
 </head>
 
-<body class="landing-page">
-    <main class="landing-container">
-        <h1 class="landing-heading">Scan the QR Code to Continue</h1>
-        <p class="landing-subtext">Connect with us on all platforms</p>
+<body class="landing-page" style="background: url('assets/background.png') center/cover no-repeat fixed;">
+    <div style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0); z-index: 0;"></div>
+    <main class="landing-container" style="position: relative; z-index: 1;">
+        <h1 style="color: white;" class="landing-heading">Scan the QR Code to Continue</h1>
+        <p style="color: white;" class="landing-subtext">Connect with us on all platforms</p>
 
         <div class="qr-code-wrapper">
             <img src="assets/qrcode.png" alt="QR Code - Scan to visit our links page" class="qr-code" id="qr-code">
         </div>
 
-        <p class="landing-footer">
-            Or visit directly: <a href="links.html" class="landing-link">Open Links Page</a>
+        <p style="color: white;" class="landing-footer">
+            Or visit directly: <a style="color: gray;" href="links.html" class="landing-link">Open Links Page</a>
         </p>
     </main>
 
